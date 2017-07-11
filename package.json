@@ -1,0 +1,22 @@
+{
+  "name": "signalk-victron-battery-monitor",
+  "version": "1.0.0",
+  "description": "Signal K plugin to process proprietary battery sentences from the Victron BMV70x",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "signalk-node-server-plugin"
+  ],
+  "author": "scott@scottbender.net",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "lodash": "^3.10.1"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/sbender9/signalk-victron-battery-monitor"
+  }
+}
