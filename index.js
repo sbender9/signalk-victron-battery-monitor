@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-const debug = require('debug')('signalk-victron-battery-monitor')
 const _ = require('lodash')
 
 const alarms = {
@@ -64,7 +63,6 @@ module.exports = function(app) {
   }
   
   plugin.start = function(options) {
-    debug("start")
     n2kCallback = (msg) => {
       try {
         var enc_msg = null
@@ -106,7 +104,7 @@ module.exports = function(app) {
             ]
           }
           
-          //debug("send delta: " + JSON.stringify(delta))
+          //app.debug("send delta: " + JSON.stringify(delta))
           app.handleMessage(plugin.id, delta)
         } else if ( msg.pgn == 127501
                     && typeof state[msg.src] !== 'undefined'
@@ -155,7 +153,7 @@ module.exports = function(app) {
                   }
                 ]
               }
-              debug("send delta: " + JSON.stringify(delta))
+              app.debug("send delta: " + JSON.stringify(delta))
               app.handleMessage(plugin.id, delta)
             }
           });
